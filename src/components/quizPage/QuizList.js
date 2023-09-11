@@ -13,8 +13,12 @@ const QuizList = ({question, setAggregateScore, aggregateScore}) => {
         return <h1>{question.questionText}</h1>
     }
 
+    const handleAnswerButtonClick = (answer) => {
+        console.log(answer);
+    }
+
     const returnAnswers = question.options.map((answer) => {
-        return <button>{answer}</button>
+        return <button onClick={() => handleAnswerButtonClick(answer)}>{answer}</button>
     })
 
     return (

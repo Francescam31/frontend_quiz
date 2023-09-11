@@ -18,16 +18,24 @@ const QuizContainer = () => {
         fetchQuestions();
     },[]);
 
-    return (
-        <div>
-            <QuizPage 
-            questions={questions} 
-            setPreviousQuestions={setPreviousQuestions}
-            timer={timer}
-            aggregateScore={aggregateScore}
-            setAggregateScore={setAggregateScore}/>
-        </div>
-    );
+    if(questions.length === 0) {
+        return (
+            <h1>Questions loading...</h1>
+        )
+    } else {
+        return (
+            <div>
+                <QuizPage 
+                questions={questions} 
+                setPreviousQuestions={setPreviousQuestions}
+                timer={timer}
+                aggregateScore={aggregateScore}
+                setAggregateScore={setAggregateScore}/>
+            </div>
+        );
+    }
+
+    
 }
 
 export default QuizContainer;
