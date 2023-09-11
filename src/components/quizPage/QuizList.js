@@ -14,19 +14,21 @@ const QuizList = ({question, setAggregateScore, aggregateScore}) => {
     }
 
     const handleAnswerButtonClick = (answer) => {
-        console.log(answer);
+        if (answer === question.correctAnswer) {
+            console.log('correctAnswer');
+        } else {
+            console.log('incorrectAnswer');
+        }
     }
 
-    const returnAnswers = question.options.map((answer) => {
-        return <button onClick={() => handleAnswerButtonClick(answer)}>{answer}</button>
-    })
+    const returnAnswers = question.options.map((answer, index) => {
+        return  <button key={index} onClick={() => handleAnswerButtonClick(answer)}>{answer}</button>
+    }) 
+    
 
     return (
         <div>
             {returnQuestion()}
-            {/* <button key={question.id} value={question.options[0]}>{question.options[0]}</button>
-            <button key={question.id} value={question.options[1]}>{question.options[1]}</button>
-            <button key={question.id} value={question.options[2]}>{question.options[2]}</button> */}
             {returnAnswers}
         </div>
     );
