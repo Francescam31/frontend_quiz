@@ -15,7 +15,7 @@ const QuizContainer = () => {
     }
 
     useEffect(() => {
-        fetchData();
+        fetchQuestions();
     },[]);
 
     return (
