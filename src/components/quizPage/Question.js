@@ -1,4 +1,4 @@
-const Question = () => {
+const Question = ({}) => {
 
     return (
         <div>
