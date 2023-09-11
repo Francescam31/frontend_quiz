@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import QuizPage from "../components/quizPage/QuizPage";
 
 const QuizContainer = () => {
 
@@ -19,7 +20,12 @@ const QuizContainer = () => {
 
     return (
         <div>
-
+            <QuizPage 
+            questions={questions} 
+            setPreviousQuestions={setPreviousQuestions}
+            timer={timer}
+            aggregateScore={aggregateScore}
+            setAggregateScore={setAggregateScore}/>
         </div>
     );
 }
