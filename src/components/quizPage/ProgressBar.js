@@ -1,7 +1,7 @@
 import '../../App.css'
 import { useEffect } from 'react';
 
-const ProgressBar = ({previousQuestions, aggregateScore, setAggregateScore, timer, setTimer}) => {
+const ProgressBar = ({previousQuestions, aggregateScore, timer, setTimer}) => {
 
     let sum = 0;
 

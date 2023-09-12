@@ -4,8 +4,6 @@ import ProgressBar from "./ProgressBar";
 
 const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, setPreviousQuestions, previousQuestions, timer, setTimer}) => {
 
-    const [currentQuestion, setCurrentQuestion] = ("");
-
     const [answerButtonClicked, setAnswerButtonClicked] = useState(false);
     const [timeoutId, setTimeoutId] = useState()
 

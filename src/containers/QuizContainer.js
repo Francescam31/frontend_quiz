@@ -55,7 +55,6 @@ const QuizContainer = () => {
                 setTimer={setTimer}
                 aggregateScore={aggregateScore}
                 setAggregateScore={setAggregateScore}/>
-                {/* {onNextQuestion()} */}
             </div>
         );
     }
