@@ -29,6 +29,7 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
             setTimer={setTimer}
             setTimeoutId={setTimeoutId}
             timeoutId={timeoutId}
+            setButtonHidden={setButtonHidden}
             />
            <QuizList 
            question={questions[0]}
@@ -38,6 +39,7 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
            answerButtonClicked={answerButtonClicked}
            setAnswerButtonClicked={setAnswerButtonClicked}
            setTimer={setTimer}
+           timer={timer}
            /> 
            <button onClick={() => handleNextQuestionButton()} hidden={buttonHidden}>Next Question</button>
         </div>

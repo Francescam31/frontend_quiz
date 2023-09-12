@@ -1,7 +1,7 @@
 import '../../App.css'
 import { useEffect } from 'react';
 
-const ProgressBar = ({previousQuestions, aggregateScore, timer, setTimer}) => {
+const ProgressBar = ({previousQuestions, aggregateScore, timer, setTimer, setButtonHidden}) => {
 
     let sum = 0;
 
@@ -10,6 +10,10 @@ const ProgressBar = ({previousQuestions, aggregateScore, timer, setTimer}) => {
         sum = sum + aggregateScore[i];
     }} else {
         sum = 0;
+    } 
+
+    if (timer === 0) {
+        setButtonHidden(null)
     }
 
     useEffect(() => {

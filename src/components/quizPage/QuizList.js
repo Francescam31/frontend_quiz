@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '../../App.css';
 
 
-const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden, answerButtonClicked, setAnswerButtonClicked, setTimer}) => {
+const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden, answerButtonClicked, setAnswerButtonClicked, setTimer, timer}) => {
 
     const returnQuestion = () => {
         return <h1>{question.questionText}</h1>
@@ -10,7 +10,7 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
 
     const handleAnswerButtonClick = (answer) => {
         if (answerButtonClicked === false) {
-            if (answer === question.correctAnswer) {
+            if (answer === question.correctAnswer && timer >0) {
                 console.log('correctAnswer');
                 setAggregateScore([...aggregateScore,1])
                 setButtonHidden(null);
@@ -24,9 +24,9 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
                 console.log(aggregateScore);
                 setAnswerButtonClicked(true);
                 setTimer(0);
-    
-            }
-        }        
+            } 
+        }   
+        // figure out how to enter a 0 value to null
     }
 
     const returnAnswers = question.options.map((answer, index) => {
