@@ -8,6 +8,9 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
     const [timeoutId, setTimeoutId] = useState()
 
     const handleNextQuestionButton = () => {
+        if(!answerButtonClicked){
+            setAggregateScore([...aggregateScore,0])
+        }
         setPreviousQuestions([...previousQuestions, questions[0]]);
         const tempQuestions = questions.filter(item => item !== questions[0]);
         setQuestions(tempQuestions);
@@ -30,6 +33,7 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
             setTimeoutId={setTimeoutId}
             timeoutId={timeoutId}
             setButtonHidden={setButtonHidden}
+            
             />
            <QuizList 
            question={questions[0]}

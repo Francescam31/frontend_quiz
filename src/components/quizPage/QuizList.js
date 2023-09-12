@@ -9,15 +9,15 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
     }
 
     const handleAnswerButtonClick = (answer) => {
-        if (answerButtonClicked === false) {
-            if (answer === question.correctAnswer && timer >0) {
+        if (answerButtonClicked === false && timer>0) {
+            if (answer === question.correctAnswer) {
                 console.log('correctAnswer');
                 setAggregateScore([...aggregateScore,1])
                 setButtonHidden(null);
                 console.log(aggregateScore);
                 setAnswerButtonClicked(true);
                 setTimer(0);
-            } else {
+            } else{
                 console.log('incorrectAnswer');
                 setAggregateScore([...aggregateScore,0])
                 setButtonHidden(null);
@@ -30,7 +30,7 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
     }
 
     const returnAnswers = question.options.map((answer, index) => {
-        return  <button key={index} onClick={() => handleAnswerButtonClick(answer)} cli>{answer}</button>
+        return  <button key={index} onClick={() => handleAnswerButtonClick(answer)} >{answer}</button>
     }) 
     
 
