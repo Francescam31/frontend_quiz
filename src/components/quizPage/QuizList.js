@@ -1,7 +1,7 @@
 import '../../App.css';
 
 
-const QuizList = ({question, setAggregateScore, aggregateScore}) => {
+const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden}) => {
 
     // const handleButtonClick = () => {
     //     if (answerButton.value === question.correctAnswer) {
@@ -16,8 +16,10 @@ const QuizList = ({question, setAggregateScore, aggregateScore}) => {
     const handleAnswerButtonClick = (answer) => {
         if (answer === question.correctAnswer) {
             console.log('correctAnswer');
+            setButtonHidden(null);
         } else {
             console.log('incorrectAnswer');
+            setButtonHidden(null);
         }
     }
 
