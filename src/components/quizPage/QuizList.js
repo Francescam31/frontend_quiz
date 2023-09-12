@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import '../../App.css';
 
 
-const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden}) => {
+const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden, answerButtonClicked, setAnswerButtonClicked}) => {
 
-    // const handleButtonClick = () => {
+    // const handleButtonClick = () => {ss
     //     if (answerButton.value === question.correctAnswer) {
     //         setAggregateScore(aggregateScore + 1)
     //     }
@@ -14,17 +15,24 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden}
     }
 
     const handleAnswerButtonClick = (answer) => {
-        if (answer === question.correctAnswer) {
-            console.log('correctAnswer');
-            setButtonHidden(null);
-        } else {
-            console.log('incorrectAnswer');
-            setButtonHidden(null);
+        if (answerButtonClicked === false) {
+            if (answer === question.correctAnswer) {
+                console.log('correctAnswer');
+                setButtonHidden(null);
+                setAnswerButtonClicked(true);
+            } else {
+                console.log('incorrectAnswer');
+                setButtonHidden(null);
+                setAnswerButtonClicked(true);
+            }
         }
+        
     }
 
+
+
     const returnAnswers = question.options.map((answer, index) => {
-        return  <button key={index} onClick={() => handleAnswerButtonClick(answer)}>{answer}</button>
+        return  <button key={index} onClick={() => handleAnswerButtonClick(answer)} cli>{answer}</button>
     }) 
     
 
