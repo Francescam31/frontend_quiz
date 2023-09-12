@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import QuizPage from "../components/quizPage/QuizPage";
+import FinalPage from "../components/finalPage/FinalPage";
 
 const QuizContainer = () => {
 
@@ -55,6 +56,7 @@ const QuizContainer = () => {
                 setTimer={setTimer}
                 aggregateScore={aggregateScore}
                 setAggregateScore={setAggregateScore}/>
+                <FinalPage aggregateScore={aggregateScore} previousQuestions={previousQuestions}/>
             </div>
         );
     }
