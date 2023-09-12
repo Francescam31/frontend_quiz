@@ -7,12 +7,10 @@ const QuizContainer = () => {
     const [previousQuestions, setPreviousQuestions] = useState([]);
     const [timer, setTimer] = useState(30);
     const [aggregateScore, setAggregateScore] = useState(0);
-    // const [shuffledList, setShuffledList] = useState([]);
 
     const fetchQuestions = async () => {
         const response = await fetch("http://localhost:8080/questions") ;
         const questionsData = await response.json();
-        // setShuffledList(shuffledArray(questionsData));
         const shuffledQuestions = shuffleArray(questionsData);
         setQuestions(shuffledQuestions);
     }
@@ -39,7 +37,9 @@ const QuizContainer = () => {
             <div>
                 <QuizPage 
                 questions={questions} 
+                setQuestions={setQuestions}
                 setPreviousQuestions={setPreviousQuestions}
+                previousQuestions={previousQuestions}
                 timer={timer}
                 aggregateScore={aggregateScore}
                 setAggregateScore={setAggregateScore}/>

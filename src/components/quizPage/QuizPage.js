@@ -1,14 +1,14 @@
 import QuizList from "./QuizList";
 
-const QuizPage = ({questions, aggregateScore, setAggregateScore, setPreviousQuestions, timer}) => {
+const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, setPreviousQuestions, previousQuestions, timer}) => {
 
     const [currentQuestion, setCurrentQuestion] = ("");
 
-    // const randomizeQuestion = () => {
-    //     if(questions.length !== 0){
-    //         let maximumNumberOfQuestions = questions.
-    //     }
-    // }
+    const handleNextQuestionButton = () => {
+        setPreviousQuestions([...previousQuestions, questions[0]]);
+        const tempQuestions = questions.filter(item => item !== questions[0]);
+        setQuestions(tempQuestions);
+    }
 
     return (
         <div>
@@ -16,7 +16,7 @@ const QuizPage = ({questions, aggregateScore, setAggregateScore, setPreviousQues
            question={questions[0]}
            aggregateScore={aggregateScore}
            setAggregateScore={setAggregateScore}/> 
-           <button>Next Question</button>
+           <button onClick={() => handleNextQuestionButton()}>Next Question</button>
         </div>
     );
 }
