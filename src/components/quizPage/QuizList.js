@@ -18,14 +18,41 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
         if (answerButtonClicked === false) {
             if (answer === question.correctAnswer) {
                 console.log('correctAnswer');
+                setAggregateScore([...aggregateScore,1])
                 setButtonHidden(null);
+                console.log(aggregateScore);
                 setAnswerButtonClicked(true);
             } else {
                 console.log('incorrectAnswer');
+                setAggregateScore([...aggregateScore,0])
                 setButtonHidden(null);
+                console.log(aggregateScore);
                 setAnswerButtonClicked(true);
+    
             }
         }
+
+    // const handleAnswerButtonClick = (answer) => {
+    //     if (!answerButtonClicked) {
+    //       if (answer === question.correctAnswer) {
+    //         console.log('correctAnswer');
+    //         setAggregateScore(aggregateScore + 1);
+    //       } else {
+    //         console.log('incorrectAnswer');
+    //       }
+    
+    //       setAnswerButtonClicked(true);
+    //       setSelectedAnswer(answer);
+    //       setButtonHidden(null);
+    //     }
+    //   };
+    
+    //   const handleNextButtonClick = () => {
+    //     setAnswerButtonClicked(false);
+    //     setSelectedAnswer(null);
+    //     onNextQuestion(); 
+    //   };
+        
         
     }
 

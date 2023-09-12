@@ -6,7 +6,8 @@ const QuizContainer = () => {
     const [questions, setQuestions] = useState([]);
     const [previousQuestions, setPreviousQuestions] = useState([]);
     const [timer, setTimer] = useState(30);
-    const [aggregateScore, setAggregateScore] = useState(0);
+    const [aggregateScore, setAggregateScore] = useState([]);
+    // const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
     const fetchQuestions = async () => {
         const response = await fetch("http://localhost:8080/questions") ;
@@ -24,9 +25,25 @@ const QuizContainer = () => {
         return newArray;
     }
 
+    // const onNextQuestion = () => {
+    //     if (currentQuestionIndex < questions.length -1) {
+    //         setCurrentQuestionIndex(currentQuestionIndex +1)
+    //     }
+    // }
+
+
+
     useEffect(() => {
         fetchQuestions();
+        console.log(aggregateScore)
     },[]);
+
+    useEffect(() => {
+        if (aggregateScore.length === 10) {
+            console.log("finished quiz")
+        }
+    
+    },[aggregateScore]);
 
     if(questions.length === 0) {
         return (
@@ -43,6 +60,7 @@ const QuizContainer = () => {
                 timer={timer}
                 aggregateScore={aggregateScore}
                 setAggregateScore={setAggregateScore}/>
+                {/* {onNextQuestion()} */}
             </div>
         );
     }
