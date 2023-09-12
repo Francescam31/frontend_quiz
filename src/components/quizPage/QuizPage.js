@@ -20,7 +20,9 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
 
     return (
         <div>
-            <ProgressBar previousQuestions={previousQuestions}/>
+            <ProgressBar 
+            previousQuestions={previousQuestions}
+            aggregateScore={aggregateScore}/>
            <QuizList 
            question={questions[0]}
            aggregateScore={aggregateScore}
