@@ -1,5 +1,5 @@
-import Question from "./Question";
-import Answer from "./Answer";
+import '../../App.css';
+
 
 const QuizList = ({question, setAggregateScore, aggregateScore}) => {
 
@@ -27,7 +27,7 @@ const QuizList = ({question, setAggregateScore, aggregateScore}) => {
     
 
     return (
-        <div>
+        <div className='quiz-body'>
             {returnQuestion()}
             {returnAnswers}
         </div>

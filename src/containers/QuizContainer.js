@@ -7,11 +7,23 @@ const QuizContainer = () => {
     const [previousQuestions, setPreviousQuestions] = useState([]);
     const [timer, setTimer] = useState(30);
     const [aggregateScore, setAggregateScore] = useState(0);
+    // const [shuffledList, setShuffledList] = useState([]);
 
     const fetchQuestions = async () => {
         const response = await fetch("http://localhost:8080/questions") ;
         const questionsData = await response.json();
-        setQuestions(questionsData);
+        // setShuffledList(shuffledArray(questionsData));
+        const shuffledQuestions = shuffleArray(questionsData);
+        setQuestions(shuffledQuestions);
+    }
+
+    const shuffleArray = (array) => {
+        const newArray = [...array];
+        for (let i = newArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+        }
+        return newArray;
     }
 
     useEffect(() => {
