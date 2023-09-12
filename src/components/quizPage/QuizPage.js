@@ -1,5 +1,6 @@
 import { useState } from "react";
 import QuizList from "./QuizList";
+import ProgressBar from "./ProgressBar";
 
 const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, setPreviousQuestions, previousQuestions, timer}) => {
 
@@ -19,6 +20,7 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
 
     return (
         <div>
+            <ProgressBar previousQuestions={previousQuestions}/>
            <QuizList 
            question={questions[0]}
            aggregateScore={aggregateScore}

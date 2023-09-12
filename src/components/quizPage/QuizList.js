@@ -4,12 +4,6 @@ import '../../App.css';
 
 const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden, answerButtonClicked, setAnswerButtonClicked}) => {
 
-    // const handleButtonClick = () => {ss
-    //     if (answerButton.value === question.correctAnswer) {
-    //         setAggregateScore(aggregateScore + 1)
-    //     }
-    // }
-
     const returnQuestion = () => {
         return <h1>{question.questionText}</h1>
     }
@@ -30,33 +24,8 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
                 setAnswerButtonClicked(true);
     
             }
-        }
-
-    // const handleAnswerButtonClick = (answer) => {
-    //     if (!answerButtonClicked) {
-    //       if (answer === question.correctAnswer) {
-    //         console.log('correctAnswer');
-    //         setAggregateScore(aggregateScore + 1);
-    //       } else {
-    //         console.log('incorrectAnswer');
-    //       }
-    
-    //       setAnswerButtonClicked(true);
-    //       setSelectedAnswer(answer);
-    //       setButtonHidden(null);
-    //     }
-    //   };
-    
-    //   const handleNextButtonClick = () => {
-    //     setAnswerButtonClicked(false);
-    //     setSelectedAnswer(null);
-    //     onNextQuestion(); 
-    //   };
-        
-        
+        }        
     }
-
-
 
     const returnAnswers = question.options.map((answer, index) => {
         return  <button key={index} onClick={() => handleAnswerButtonClick(answer)} cli>{answer}</button>
