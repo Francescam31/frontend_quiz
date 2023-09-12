@@ -1,4 +1,5 @@
 import '../../App.css'
+import { useEffect } from 'react';
 
 const ProgressBar = ({previousQuestions, aggregateScore, setAggregateScore, timer, setTimer}) => {
 
@@ -11,24 +12,16 @@ const ProgressBar = ({previousQuestions, aggregateScore, setAggregateScore, time
         sum = 0;
     }
 
-    const newTime = () => {
-        if(timer >= 0) {
-         setTimeout(() => {setTimer(timer - 1);}, 1000) 
-         return timer; 
-        } else {
-            setTimer = 0;
-            setAggregateScore([...aggregateScore, 0]);
-            return timer;
-        }
-    }
-
-    // useEffect
+    useEffect(() => {
+        const countDown = timer > 0 && setInterval(() => setTimer(timer - 1), 1000);
+        return () => clearInterval(countDown);
+      }, [timer]);
 
     return (
         <div>
             <p>Question: {previousQuestions.length + 1} of 10</p>
             <p>Score: {sum}</p>
-            <p>{newTime()}</p>
+            <p>{timer}</p>
             
         </div>
     );

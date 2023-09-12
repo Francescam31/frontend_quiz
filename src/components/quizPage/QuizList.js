@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '../../App.css';
 
 
-const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden, answerButtonClicked, setAnswerButtonClicked}) => {
+const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden, answerButtonClicked, setAnswerButtonClicked, setTimer}) => {
 
     const returnQuestion = () => {
         return <h1>{question.questionText}</h1>
@@ -16,12 +16,14 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
                 setButtonHidden(null);
                 console.log(aggregateScore);
                 setAnswerButtonClicked(true);
+                setTimer(0);
             } else {
                 console.log('incorrectAnswer');
                 setAggregateScore([...aggregateScore,0])
                 setButtonHidden(null);
                 console.log(aggregateScore);
                 setAnswerButtonClicked(true);
+                setTimer(0);
     
             }
         }        
