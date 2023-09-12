@@ -2,7 +2,7 @@ import { useState } from "react";
 import QuizList from "./QuizList";
 import ProgressBar from "./ProgressBar";
 
-const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, setPreviousQuestions, previousQuestions, timer}) => {
+const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, setPreviousQuestions, previousQuestions, timer, setTimer}) => {
 
     const [currentQuestion, setCurrentQuestion] = ("");
 
@@ -14,6 +14,7 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
         setQuestions(tempQuestions);
         setButtonHidden("hidden");
         setAnswerButtonClicked(false);
+        setTimer(30);
     }
 
     const [buttonHidden, setButtonHidden] = useState("hidden");
@@ -22,7 +23,10 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
         <div>
             <ProgressBar 
             previousQuestions={previousQuestions}
-            aggregateScore={aggregateScore}/>
+            aggregateScore={aggregateScore}
+            setAggregateScore={setAggregateScore}
+            timer={timer}
+            setTimer={setTimer}/>
            <QuizList 
            question={questions[0]}
            aggregateScore={aggregateScore}

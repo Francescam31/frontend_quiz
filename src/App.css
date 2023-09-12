@@ -2,9 +2,8 @@
   text-align: center;
 }
 
-
-
 .quiz-body {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
+

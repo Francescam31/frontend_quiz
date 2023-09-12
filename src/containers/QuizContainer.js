@@ -35,6 +35,10 @@ const QuizContainer = () => {
     
     },[aggregateScore]);
 
+    useEffect(() => {
+        setTimer(timer);
+    }, [timer])
+
     if(questions.length === 0) {
         return (
             <h1>Questions loading...</h1>
@@ -48,6 +52,7 @@ const QuizContainer = () => {
                 setPreviousQuestions={setPreviousQuestions}
                 previousQuestions={previousQuestions}
                 timer={timer}
+                setTimer={setTimer}
                 aggregateScore={aggregateScore}
                 setAggregateScore={setAggregateScore}/>
                 {/* {onNextQuestion()} */}
