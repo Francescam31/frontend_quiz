@@ -15,7 +15,7 @@ const FinalScore = ({aggregateScore}) => {
         <div>
             <h1>Congratulations</h1>
             <p>{sum}</p>
-            <button>Play Again</button>
+            <a href="/"><button>Play Again</button></a>
         </div>
     );
 }
