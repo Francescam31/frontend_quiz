@@ -4,12 +4,12 @@ import FinalPage from "../components/finalPage/FinalPage";
 import StartPage from "../components/startPage/StartPage";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 
-const QuizContainer = () => {
+const QuizContainer = ({questions, setQuestions, previousQuestions, setPreviousQuestions, timer, setTimer, aggregateScore, setAggregateScore}) => {
 
-    const [questions, setQuestions] = useState([]);
-    const [previousQuestions, setPreviousQuestions] = useState([]);
-    const [timer, setTimer] = useState(30);
-    const [aggregateScore, setAggregateScore] = useState([]);
+    // const [questions, setQuestions] = useState([]);
+    // const [previousQuestions, setPreviousQuestions] = useState([]);
+    // const [timer, setTimer] = useState(30);
+    // const [aggregateScore, setAggregateScore] = useState([]);
 
     const fetchQuestions = async () => {
         const response = await fetch("http://localhost:8080/questions") ;
@@ -31,11 +31,11 @@ const QuizContainer = () => {
         fetchQuestions();
     },[]);
 
-    if(questions.length === 0) {
-        return (
-            <h1>Questions loading...</h1>
-        )
-    } else {
+    // if(questions.length === 0) {
+    //     return (
+    //         <h1>Questions loading...</h1>
+    //     )
+    // } else {
         return (
             <div>
                 
@@ -60,6 +60,6 @@ const QuizContainer = () => {
     }
 
     
-}
+// }
 
 export default QuizContainer;

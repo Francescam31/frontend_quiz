@@ -1,6 +1,7 @@
 import { useState } from "react";
 import QuizList from "./QuizList";
 import ProgressBar from "./ProgressBar";
+import { Link } from "react-router-dom";
 
 const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, setPreviousQuestions, previousQuestions, timer, setTimer}) => {
 
@@ -24,7 +25,7 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
 
     const chooseButton = () => {
         if (previousQuestions.length === 9){
-            return <a href="/FinalPage"><button hidden={buttonHidden} onClick={() => handleNextQuestionButton()}>See Results</button></a>
+            return <Link to="/FinalPage"><button hidden={buttonHidden} onClick={() => handleNextQuestionButton()}>See Results</button></Link>
         } else {
             return <button onClick={() => handleNextQuestionButton()} hidden={buttonHidden}>Next Question</button>
         }
