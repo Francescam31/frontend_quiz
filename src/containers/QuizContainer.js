@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import QuizPage from "../components/quizPage/QuizPage";
 import FinalPage from "../components/finalPage/FinalPage";
+import StartPage from "../components/startPage/StartPage";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 
 const QuizContainer = () => {
 
@@ -47,16 +49,24 @@ const QuizContainer = () => {
     } else {
         return (
             <div>
-                <QuizPage 
-                questions={questions} 
-                setQuestions={setQuestions}
-                setPreviousQuestions={setPreviousQuestions}
-                previousQuestions={previousQuestions}
-                timer={timer}
-                setTimer={setTimer}
-                aggregateScore={aggregateScore}
-                setAggregateScore={setAggregateScore}/>
-                <FinalPage aggregateScore={aggregateScore} previousQuestions={previousQuestions}/>
+                
+                <BrowserRouter>
+                    <Link to="/"><p>Start</p></Link>
+                    <Routes>
+                            <Route path="/" element={<StartPage />} key={1}/>
+                            <Route path="/QuizPage" element={<QuizPage 
+                            questions={questions} 
+                            setQuestions={setQuestions}
+                            setPreviousQuestions={setPreviousQuestions}
+                            previousQuestions={previousQuestions}
+                            timer={timer}
+                            setTimer={setTimer}
+                            aggregateScore={aggregateScore}
+                            setAggregateScore={setAggregateScore}/>} key={2}/>
+                        <Route path="/FinalPage" element={<FinalPage aggregateScore={aggregateScore} previousQuestions={previousQuestions}/>} key={3}/>
+                    </Routes>
+                </BrowserRouter>
+                
             </div>
         );
     }
