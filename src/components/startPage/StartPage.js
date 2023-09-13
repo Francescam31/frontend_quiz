@@ -3,7 +3,7 @@ import StartPageForm from "./StartPageForm";
 const StartPage = ({username, setUsername, postUser}) => {
 
     return (
-        <div>
+        <div className="app">
             <StartPageForm username={username} setUsername={setUsername} postUser={postUser}/>
         </div>
     );
