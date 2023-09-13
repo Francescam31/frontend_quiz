@@ -1,31 +1,48 @@
 import { useState } from "react"
+import "../../App.css"
 
 const Review = ({aggregateScore, previousQuestions}) => {
 
-    // const reviewQuestions = () => {
-    //     for (let i = 0 ; i<previousQuestions.length ; i++){
-    //         <li>{previousQuestions[i].questionText} , {previousQuestions[i].correctAnswer}, {aggregateScore[i]}</li>
-    //     }
-        
-    // }
-    // const [displayScore, setDisplayScore] = useState([]);
-    // for(let i = 0; i<10; i++){
-    //     if(aggregateScore[i] === 0){
-    //         setDisplayScore([...displayScore,"Incorrect"])
-    //     } else {
-    //         setDisplayScore([...displayScore,"Correct"]) 
-    //     }
-    // }
+    
+    const [displayScore, setDisplayScore] = useState([]);
 
-    const reviewQuestions = previousQuestions.map((question,index) => {
-        return <li>{question.questionText} , {question.correctAnswer}</li>
+    const changeScore = aggregateScore.map((score) => {
+        if(score === 0){
+            return(
+                <div className="score">
+                    <p>Incorrect</p>
+                </div>
+            ) 
+        } else {
+            return(
+                <div className="score">
+                    <p>Correct</p>
+                </div>
+            ) 
+        }
+    })
+
+    const reviewQuestions = previousQuestions.map((question) => {
+        return(
+            <div className="questions-answer">
+                <div>
+                    <p>{question.questionText}</p>
+                </div>
+                <div>
+                    <p>{question.correctAnswer}</p>
+                </div>
+            </div>
+        )
     })
 
     return(
-        <div>
-            <ul>
+        <div className="review">
+            <div className="questions">
                 {reviewQuestions}
-            </ul>
+            </div>
+            <div className="scores">
+                {changeScore}
+            </div>
         </div>
     )
 }

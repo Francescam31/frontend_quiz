@@ -7,3 +7,34 @@
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
+.questions-answer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  line-height: 2;
+}
+
+/* .review::reviewQuestions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  display: flex;
+}
+
+.review::changeScore {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  display: flex;
+} */
+
+/* .score {
+  display: grid;
+  grid-template-columns: 1fr;
+} */
+
+.review {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  line-height: 3;
+  /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+}
+
