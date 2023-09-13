@@ -10,6 +10,7 @@ const FinalPage = ({aggregateScore, previousQuestions, username}) => {
         <div>
             <FinalScore aggregateScore={aggregateScore} username={username}/>
             <Review previousQuestions={previousQuestions} aggregateScore={aggregateScore}/>
+            <a href="/"><button>Play Again</button></a>
         </div>
     );
 }
