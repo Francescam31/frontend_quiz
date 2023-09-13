@@ -25,9 +25,20 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
 
     const chooseButton = () => {
         if (previousQuestions.length === 9){
-            return <Link to="/FinalPage"><button hidden={buttonHidden} onClick={() => handleNextQuestionButton()}>See Results</button></Link>
+            return (
+                <div>
+                <p hidden={buttonHidden}>{questions[0].fact}</p>
+            <Link to="/FinalPage"><button hidden={buttonHidden} onClick={() => handleNextQuestionButton()}>See Results</button></Link>
+            </div>
+            )
         } else {
-            return <button onClick={() => handleNextQuestionButton()} hidden={buttonHidden}>Next Question</button>
+            return (
+                <div>
+                <p hidden={buttonHidden}>{questions[0].fact}</p>
+                <button onClick={() => handleNextQuestionButton()} hidden={buttonHidden}>Next Question</button>
+            </div>
+            )
+            
         }
     }
 
@@ -54,6 +65,7 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
            setTimer={setTimer}
            timer={timer}
            /> 
+
            {chooseButton()}
         </div>
     );
