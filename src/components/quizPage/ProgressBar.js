@@ -12,12 +12,12 @@ const ProgressBar = ({previousQuestions, aggregateScore, timer, setTimer, setBut
         sum = 0;
     } 
 
-    if (timer === 0) {
-        setButtonHidden(null)
-        // setAggregateScore([...aggregateScore,0]);
-    }
+    
 
     useEffect(() => {
+        if (timer === 0) {
+            setButtonHidden(null)
+        }
         const countDown = timer > 0 && setInterval(() => setTimer(timer - 1), 1000);
         return () => clearInterval(countDown);
       }, [timer]);

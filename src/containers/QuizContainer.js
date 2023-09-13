@@ -31,17 +31,6 @@ const QuizContainer = () => {
         fetchQuestions();
     },[]);
 
-    useEffect(() => {
-        if (aggregateScore.length === 10) {
-            console.log("finished quiz")
-        }
-    
-    },[aggregateScore]);
-
-    useEffect(() => {
-        setTimer(timer);
-    }, [timer])
-
     if(questions.length === 0) {
         return (
             <h1>Questions loading...</h1>
@@ -51,7 +40,6 @@ const QuizContainer = () => {
             <div>
                 
                 <BrowserRouter>
-                    <Link to="/"><p>Start</p></Link>
                     <Routes>
                             <Route path="/" element={<StartPage />} key={1}/>
                             <Route path="/QuizPage" element={<QuizPage 
