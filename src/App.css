@@ -9,8 +9,8 @@
 
 .questions-answer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  line-height: 2;
+  grid-template-columns: 3fr 1fr;
+  line-height: 1;
 }
 
 /* .review::reviewQuestions {
@@ -33,8 +33,7 @@
 
 .review {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  line-height: 3;
-  /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+  grid-template-columns: 1fr 2fr;
+  line-height: 1.94;
 }
 
