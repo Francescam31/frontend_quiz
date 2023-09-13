@@ -1,4 +1,4 @@
-const FinalScore = ({aggregateScore}) => {
+const FinalScore = ({aggregateScore, username}) => {
 
     // let sum = 0;
 
@@ -13,7 +13,7 @@ const FinalScore = ({aggregateScore}) => {
 
     return (
         <div>
-            <h1>Congratulations</h1>
+            <h1>Congratulations {username}!</h1>
             <p>{sum}</p>
             <a href="/"><button>Play Again</button></a>
         </div>

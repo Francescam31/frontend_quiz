@@ -1,12 +1,10 @@
 import StartPageForm from "./StartPageForm";
-import { Link, Outlet } from "react-router-dom";
 
-const StartPage = () => {
+const StartPage = ({username, setUsername, postUser}) => {
 
     return (
         <div>
-            <StartPageForm />
-            <Link to="/QuizPage" ><button>Start Quiz</button></Link>
+            <StartPageForm username={username} setUsername={setUsername} postUser={postUser}/>
         </div>
     );
 }
