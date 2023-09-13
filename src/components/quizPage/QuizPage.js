@@ -22,6 +22,14 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
 
     const [buttonHidden, setButtonHidden] = useState("hidden");
 
+    const chooseButton = () => {
+        if (previousQuestions.length === 9){
+            return <a href="/FinalPage"><button hidden={buttonHidden} onClick={() => handleNextQuestionButton()}>See Results</button></a>
+        } else {
+            return <button onClick={() => handleNextQuestionButton()} hidden={buttonHidden}>Next Question</button>
+        }
+    }
+
     return (
         <div>
             <ProgressBar 
@@ -45,7 +53,7 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
            setTimer={setTimer}
            timer={timer}
            /> 
-           <button onClick={() => handleNextQuestionButton()} hidden={buttonHidden}>Next Question</button>
+           {chooseButton()}
         </div>
     );
 }
