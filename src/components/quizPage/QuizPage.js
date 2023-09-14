@@ -11,6 +11,7 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
     const [buttonHidden, setButtonHidden] = useState("hidden");
     const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [streak, setStreak] = useState(0);
 
     const handleNextQuestionButton = () => {
         if(!answerButtonClicked){
@@ -25,6 +26,7 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
         setButtonPressed(false);
         setIsAnswerCorrect(null);
         setSelectedAnswer(null);
+        
        
     }
 
@@ -76,6 +78,8 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
                 setIsAnswerCorrect={setIsAnswerCorrect}
                 selectedAnswer={selectedAnswer}
                 setSelectedAnswer={setSelectedAnswer}
+                streak={streak}
+                setStreak={setStreak}
                 /> 
             </div>
            
