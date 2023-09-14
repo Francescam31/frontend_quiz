@@ -36,16 +36,22 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
     }
   };
 
-  const returnAnswers = question.options.map((answer, index) => {
-    const isSelected = selectedAnswer === answer; 
+const returnAnswers = question.options.map((answer, index) => {
+    const isSelected = selectedAnswer === answer;
+  
     let buttonClass = '';
-
+  
     if (isSelected) {
-      buttonClass = isAnswerCorrect ? 'correct' : 'incorrect';
-    } else {
-      buttonClass = '';
+      if (isAnswerCorrect) {
+        buttonClass = 'correct';
+      } else {
+        buttonClass = 'incorrect';
+      }
+    } else if (!isAnswerCorrect && selectedAnswer && answer === question.correctAnswer) {
+      buttonClass = 'correct';
     }
-
+  
+  
     return (
       <button
         key={index}
