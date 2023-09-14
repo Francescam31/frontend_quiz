@@ -35,6 +35,9 @@ const ProgressBar = ({previousQuestions, aggregateScore, timer, setTimer, setBut
 
     return (
         <div className='progress-bar'>
+            <div className='progress-bar-align'>
+                <p>{previousQuestions.length + 1} of 10</p>
+            </div>
             <div className='timer-countdown'>
                 <CircularProgressbar 
                 value={timer} maxValue={30} 
@@ -43,8 +46,9 @@ const ProgressBar = ({previousQuestions, aggregateScore, timer, setTimer, setBut
                     pathColor: `${colour}`
                 })} />
             </div>
-            <p>Question: {previousQuestions.length + 1} of 10</p>
-            <p>Score: {sum}</p>
+            <div className='progress-bar-align'>
+                <p>Score: {sum}</p>
+            </div>
             
     
             
