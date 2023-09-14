@@ -1,9 +1,16 @@
 import { Link , useNavigate} from "react-router-dom";
 import "./StartPageForm.css";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const StartPageForm = ({username, setUsername, postUser}) => {
     const navigate = useNavigate();
+
+    const [stateUsername, setStateUsername] = useState(
+        {
+            name:""
+        }
+    )
 
     const handleFormSubmit = (event) => {  
         event.preventDefault()
@@ -27,7 +34,7 @@ const StartPageForm = ({username, setUsername, postUser}) => {
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
-                <Link to="/QuizPage" ><button>Start Quiz</button></Link>
+                <Link to="/QuizPage" ><button type="submit">Start Quiz</button></Link>
             </form>
             </motion.div>
     );
