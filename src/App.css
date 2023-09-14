@@ -1,5 +1,14 @@
-.App {
+.app {
   text-align: center;
+  width: 100%;
+  min-height: 100vh; /* Minimum height to cover the viewport */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem; /* Add some padding for better spacing */
+  text-align: center; /* Center align text */
 }
 
 .quiz-body {
@@ -117,7 +126,7 @@
 }
 
 .quiz-container {
-  background-color: rgba(0, 0, 0, 0.4);
+  /* background-color: rgba(0, 0, 0, 0.4);
   padding: 2rem;
   border-radius: 12px;
   display: flex;
@@ -130,6 +139,23 @@
   min-height: 40vh;
   opacity: 0.8; 
   background-color: #b8cdcf;
+  position: absolute;
+  top: 100%;
+  width: 50%; */
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 60%;
+  margin: 1% auto 0;
+  min-height: 40vh;
+  opacity: 0.8;
+  background-color: #b8cdcf;
+  position: relative;
 }
 
 .final-page {
@@ -142,7 +168,7 @@
   justify-content: center;
   text-align: center;
   max-width: 70%;
-  margin: 5% auto 0;
+  margin: 1% auto 0;
   min-height: 40vh;
   opacity: 0.8; 
   background-color: #b8cdcf;
@@ -159,4 +185,8 @@
   transition: background-color 0.3s;
   margin-top: 1rem; 
   margin-left: 41px;
+}
+
+.QuizContainer {
+  position: relative;
 }
