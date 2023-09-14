@@ -26,6 +26,14 @@
   cursor: pointer;
 }
 
+.correct{
+  background: #0e7a1e;
+}
+
+.incorrect{
+  background: red;
+}
+
 .answers button:hover {
   background-color: #899c9e;
 }
