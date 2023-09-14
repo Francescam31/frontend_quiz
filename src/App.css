@@ -18,6 +18,10 @@
   min-height: 300px;
 }
 
+.quiz-body p {
+  margin-top: 20px;
+}
+
 .question {
   font-size: 40px;
 }
