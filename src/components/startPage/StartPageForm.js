@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./StartPageForm.css";
+import { motion } from "framer-motion";
 
 const StartPageForm = ({username, setUsername, postUser}) => {
 
@@ -9,7 +10,11 @@ const StartPageForm = ({username, setUsername, postUser}) => {
     }
 
     return (
-        <div className="start-page-container">
+        <motion.div
+        className="start-page-container"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transtion : {duration: 50} }}
+        >
             <h1>FrontEnd of the world 🌍💡</h1>
             <h2>Your knowledge Our arena</h2>
             <form onSubmit={handleFormSubmit}>
@@ -22,8 +27,7 @@ const StartPageForm = ({username, setUsername, postUser}) => {
                 />
                 <Link to="/QuizPage" ><button>Start Quiz</button></Link>
             </form>
-    
-        </div >
+            </motion.div>
     );
 }
 
