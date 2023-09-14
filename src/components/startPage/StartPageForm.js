@@ -22,7 +22,7 @@ const StartPageForm = ({username, setUsername, postUser}) => {
         <motion.div
         className="start-page-container"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transtion : {duration: 3} }}
+        animate={{ opacity: 1, transtion : {duration: 5} }}
         >
             <h1>FrontEnd of the world 🌍💡</h1>
             <h2>Your knowledge Our arena</h2>
