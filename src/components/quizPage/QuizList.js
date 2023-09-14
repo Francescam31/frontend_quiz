@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../../App.css';
 
-const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden, buttonPressed, setButtonPressed, answerButtonClicked, setAnswerButtonClicked, setTimer, timer, isAnswerCorrect, setIsAnswerCorrect, selectedAnswer, setSelectedAnswer
+const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden, buttonPressed, setButtonPressed, answerButtonClicked, setAnswerButtonClicked, setTimer, timer, isAnswerCorrect, setIsAnswerCorrect, selectedAnswer, setSelectedAnswer, streak, setStreak
 }) => {
   const returnQuestion = () => {
     return <h1 className='question'>{question.questionText}</h1>;
@@ -11,7 +11,7 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
     if (answerButtonClicked === false && timer > 0) {
       setSelectedAnswer(answer);
       let isCorrect = false;
-
+  
       if (answer === question.correctAnswer) {
         console.log('correctAnswer');
         setAggregateScore([...aggregateScore, 1]);
@@ -21,6 +21,11 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
         setTimer(0);
         setButtonPressed(true);
         isCorrect = true;
+  
+        
+        if (isCorrect) {
+          setStreak(streak + 1);
+        }
       } else {
         console.log('incorrectAnswer');
         setAggregateScore([...aggregateScore, 0]);
@@ -30,13 +35,16 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
         setTimer(0);
         setButtonPressed(true);
         isCorrect = false;
+  
+        
+        setStreak(0);
       }
-
+  
       setIsAnswerCorrect(isCorrect);
     }
   };
 
-const returnAnswers = question.options.map((answer, index) => {
+  const returnAnswers = question.options.map((answer, index) => {
     const isSelected = selectedAnswer === answer;
   
     let buttonClass = '';
@@ -68,6 +76,7 @@ const returnAnswers = question.options.map((answer, index) => {
     <div className='quiz-body'>
       <div>{returnQuestion()}</div>
       <div className='answers'>{returnAnswers}</div>
+      <p>Current Streak: {streak}</p>
     </div>
   );
 };
