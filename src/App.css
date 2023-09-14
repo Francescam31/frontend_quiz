@@ -40,7 +40,7 @@
   color: white;
 }
 
-.answers button:hover {
+.answers button:hover:not([disabled]) {
   background-color: #899c9e;
 }
 
