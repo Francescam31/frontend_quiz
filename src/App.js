@@ -1,11 +1,13 @@
 import './App.css';
 import QuizContainer from './containers/QuizContainer';
 import { useState } from 'react';
+import ParticleAnimation from 'react-particle-animation'
+
 
 function App() {
 
   return (
-    <div
+    <div className='app'
     style={{
       backgroundImage: `url('./background/worldmap.png')`, 
       backgroundSize: 'cover',
@@ -14,10 +16,17 @@ function App() {
       height: '100vh',
       position: 'relative'
       }}
-      >
-    <div className='QuizContainer'>    
-    <QuizContainer />
-    </div> 
+      > 
+         <ParticleAnimation
+          numParticles={500}
+          style={{
+            position: 'absolute',
+            width: '100%',
+            height: '100%'
+          }}
+        />
+          
+    <QuizContainer /> 
     </div>
   );
 
