@@ -14,11 +14,7 @@ const StartPageForm = ({username, setUsername, postUser}) => {
 
     const handleFormSubmit = (event) => {  
         event.preventDefault()
-        postUser(stateUsername)
-        setStateUsername(
-            {
-            name:""
-        })
+        postUser("")
         navigate("/QuizPage")
     }
 

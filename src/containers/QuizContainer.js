@@ -11,6 +11,7 @@ const QuizContainer = () => {
     const [timer, setTimer] = useState(30);
     const [aggregateScore, setAggregateScore] = useState([]);
     const [username, setUsername] = useState("");
+    
 
     const fetchQuestions = async () => {
         const response = await fetch("http://localhost:8080/questions");
