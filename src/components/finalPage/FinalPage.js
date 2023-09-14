@@ -11,7 +11,9 @@ const FinalPage = ({aggregateScore, previousQuestions, username}) => {
         <div className="final-page">
             <FinalScore aggregateScore={aggregateScore} username={username}/>
             <Review previousQuestions={previousQuestions} aggregateScore={aggregateScore}/>
-            <a href="/"><button>Play Again</button></a>
+            <div className="final-page-button">
+                <a href="/"><button>Play Again</button></a>
+            </div>
         </div>
     );
 }
