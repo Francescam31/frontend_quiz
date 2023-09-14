@@ -33,7 +33,7 @@
 .answers button {
   border-radius: 15px;
   border-width: 4px;
-  padding: 0.7rem;
+  padding: 0.5rem;
   cursor: pointer;
   font-size: 25px;
   font-weight: bold;
@@ -138,7 +138,7 @@
   /* min-width: 60%; */
   margin: 1% auto 0;
   min-height: 50vh;
-  opacity: 0.8;
+  /* opacity: 0.8; */
   background-color: #b8cdcf;
   /* position: relative; */
 }
@@ -155,7 +155,7 @@
   max-width: 100%;
   margin: 1% auto 0;
   min-height: 40vh;
-  opacity: 0.8; 
+  /* opacity: 0.8;  */
   background-color: #b8cdcf;
 }
 
