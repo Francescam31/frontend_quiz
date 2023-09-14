@@ -29,16 +29,16 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
         if (previousQuestions.length === 9){
             return (
                 <div>
-                <p hidden={buttonHidden}>{questions[0].fact}</p>
-            <Link to="/FinalPage"><button hidden={buttonHidden} onClick={() => handleNextQuestionButton()}>See Results</button></Link>
-            </div>
+                    <p hidden={buttonHidden} className="fact-box">{questions[0].fact}</p>
+                    <div className="quiz-page-button"><Link to="/FinalPage"><button hidden={buttonHidden} onClick={() => handleNextQuestionButton()}>See Results</button></Link></div>
+                </div>
             )
         } else {
             return (
                 <div>
-                <p hidden={buttonHidden}>{questions[0].fact}</p>
-                <button onClick={() => handleNextQuestionButton()} hidden={buttonHidden}>Next Question</button>
-            </div>
+                    <p hidden={buttonHidden} className="fact-box">{questions[0].fact}</p>
+                    <div className="quiz-page-button"><button onClick={() => handleNextQuestionButton()} hidden={buttonHidden}>Next Question</button></div>
+                </div>
             )
             
         }

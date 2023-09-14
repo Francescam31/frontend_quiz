@@ -25,10 +25,10 @@ const Review = ({aggregateScore, previousQuestions}) => {
     const reviewQuestions = previousQuestions.map((question) => {
         return(
             <div className="questions-answer">
-                <div>
+                <div className="final-page-question">
                     <p>{question.questionText}</p>
                 </div>
-                <div>
+                <div className="final-page-answer">
                     <p>{question.correctAnswer}</p>
                 </div>
             </div>

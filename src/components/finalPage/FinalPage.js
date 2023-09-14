@@ -1,13 +1,14 @@
 import FinalScore from "./FinalScore";
 import Review from "./Review";
 import { useState } from "react";
+import "../../App.css"
 // import sum from "../quizPage/ProgressBar";
 
 const FinalPage = ({aggregateScore, previousQuestions, username}) => {
 
 
     return (
-        <div>
+        <div className="final-page">
             <FinalScore aggregateScore={aggregateScore} username={username}/>
             <Review previousQuestions={previousQuestions} aggregateScore={aggregateScore}/>
             <a href="/"><button>Play Again</button></a>
