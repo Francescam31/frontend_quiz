@@ -1,8 +1,6 @@
 import './App.css';
 import QuizContainer from './containers/QuizContainer';
 import { useState } from 'react';
-import ParticleAnimation from 'react-particle-animation'
-
 
 function App() {
 
@@ -17,15 +15,7 @@ function App() {
       position: 'relative'
       }}
       > 
-         <ParticleAnimation
-          numParticles={500}
-          style={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%'
-          }}
-        />
-          
+
     <QuizContainer /> 
     </div>
   );
