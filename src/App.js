@@ -1,8 +1,42 @@
 import './App.css';
 import QuizContainer from './containers/QuizContainer';
-import { useState } from 'react';
+import ParticleBackground from 'react-particle-backgrounds'
 
 function App() {
+
+  const particle = () => {
+
+
+
+  const settings = {
+    canvas: {
+      canvasFillSpace: true,
+      width: 10,
+      height: 10,
+      useBouncyWalls: false
+    },
+    particle: {
+      particleCount: 50,
+      color: 'hotpink',
+      minSize: 2,
+      maxSize: 5
+    },
+    velocity: {
+      directionAngle: 0,
+      directionAngleVariance: 360,
+      minSpeed: 1,
+      maxSpeed: 3
+    },
+    opacity: {
+      minOpacity: 0,
+      maxOpacity: 0.5,
+      opacityTransitionTime: 3000
+    }
+    
+  }
+  return <ParticleBackground settings={settings} />
+
+}
 
   return (
     <div className='app'
@@ -15,8 +49,10 @@ function App() {
       position: 'relative'
       }}
       > 
-
+    
     <QuizContainer /> 
+    {/* {particle()} */}
+    
     </div>
   );
 
