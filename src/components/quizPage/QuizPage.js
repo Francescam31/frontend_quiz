@@ -8,6 +8,9 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
     const [answerButtonClicked, setAnswerButtonClicked] = useState(false);
     const [buttonPressed, setButtonPressed] = useState(false);
     const [timeoutId, setTimeoutId] = useState()
+    const [buttonHidden, setButtonHidden] = useState("hidden");
+    const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
+    const [selectedAnswer, setSelectedAnswer] = useState(null);
 
     const handleNextQuestionButton = () => {
         if(!answerButtonClicked){
@@ -20,10 +23,10 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
         setAnswerButtonClicked(false);
         setTimer(30);
         setButtonPressed(false);
+        setIsAnswerCorrect(null);
+        setSelectedAnswer(null);
        
     }
-
-    const [buttonHidden, setButtonHidden] = useState("hidden");
 
     const chooseButton = () => {
         if (previousQuestions.length === 9){
@@ -69,6 +72,10 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
                 timer={timer}
                 buttonPressed={buttonPressed}
                 setButtonPressed={setButtonPressed}
+                isAnswerCorrect={isAnswerCorrect}
+                setIsAnswerCorrect={setIsAnswerCorrect}
+                selectedAnswer={selectedAnswer}
+                setSelectedAnswer={setSelectedAnswer}
                 /> 
             </div>
            
