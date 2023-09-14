@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, setPreviousQuestions, previousQuestions, timer, setTimer}) => {
 
     const [answerButtonClicked, setAnswerButtonClicked] = useState(false);
+    const [buttonPressed, setButtonPressed] = useState(false);
     const [timeoutId, setTimeoutId] = useState()
 
     const handleNextQuestionButton = () => {
@@ -18,6 +19,7 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
         setButtonHidden("hidden");
         setAnswerButtonClicked(false);
         setTimer(30);
+        setButtonPressed(false);
        
     }
 
@@ -43,7 +45,7 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
     }
 
     return (
-        <div>
+        <div className="quiz-container">
             <ProgressBar 
             previousQuestions={previousQuestions}
             aggregateScore={aggregateScore}
@@ -55,16 +57,21 @@ const QuizPage = ({questions, setQuestions, aggregateScore, setAggregateScore, s
             setButtonHidden={setButtonHidden}
             
             />
-           <QuizList 
-           question={questions[0]}
-           aggregateScore={aggregateScore}
-           setAggregateScore={setAggregateScore}
-           setButtonHidden={setButtonHidden}
-           answerButtonClicked={answerButtonClicked}
-           setAnswerButtonClicked={setAnswerButtonClicked}
-           setTimer={setTimer}
-           timer={timer}
-           /> 
+            <div className="quiz-list-components">
+                <QuizList 
+                question={questions[0]}
+                aggregateScore={aggregateScore}
+                setAggregateScore={setAggregateScore}
+                setButtonHidden={setButtonHidden}
+                answerButtonClicked={answerButtonClicked}
+                setAnswerButtonClicked={setAnswerButtonClicked}
+                setTimer={setTimer}
+                timer={timer}
+                buttonPressed={buttonPressed}
+                setButtonPressed={setButtonPressed}
+                /> 
+            </div>
+           
 
            {chooseButton()}
         </div>

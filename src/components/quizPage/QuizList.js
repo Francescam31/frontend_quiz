@@ -2,10 +2,12 @@ import { useState } from 'react';
 import '../../App.css';
 
 
-const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden, answerButtonClicked, setAnswerButtonClicked, setTimer, timer}) => {
+const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden, buttonPressed, setButtonPressed, answerButtonClicked, setAnswerButtonClicked, setTimer, timer}) => {
+
+    
 
     const returnQuestion = () => {
-        return <h1>{question.questionText}</h1>
+        return <h1 className='question'>{question.questionText}</h1>
     }
 
     const handleAnswerButtonClick = (answer) => {
@@ -17,6 +19,7 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
                 console.log(aggregateScore);
                 setAnswerButtonClicked(true);
                 setTimer(0);
+                setButtonPressed(true)
             } else{
                 console.log('incorrectAnswer');
                 setAggregateScore([...aggregateScore,0])
@@ -24,20 +27,25 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
                 console.log(aggregateScore);
                 setAnswerButtonClicked(true);
                 setTimer(0);
+                setButtonPressed(true)
             } 
         }   
         // figure out how to enter a 0 value to null
     }
 
     const returnAnswers = question.options.map((answer, index) => {
-        return  <button key={index} onClick={() => handleAnswerButtonClick(answer)} >{answer}</button>
+        return  <button key={index} onClick={() => handleAnswerButtonClick(answer)} disabled={buttonPressed} >{answer}</button>
     }) 
     
 
     return (
         <div className='quiz-body'>
-            {returnQuestion()}
-            {returnAnswers}
+            <div >
+                {returnQuestion()}
+            </div>
+            <div className='answers'>
+                {returnAnswers}
+            </div>
         </div>
     );
 }
