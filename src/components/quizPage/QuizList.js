@@ -79,7 +79,7 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
     <div className='quiz-body'>
       <div>{returnQuestion()}</div>
       <div className='answers'>{returnAnswers}</div>
-      <p>Current Streak: {streak} {fireEmojis} </p>
+      <p> {fireEmojis} </p>
     </div>
   );
 };
