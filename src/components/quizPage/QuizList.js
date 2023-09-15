@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import '../../App.css';
 
 const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden, buttonPressed, setButtonPressed, answerButtonClicked, setAnswerButtonClicked, setTimer, timer, isAnswerCorrect, setIsAnswerCorrect, selectedAnswer, setSelectedAnswer, streak, setStreak
@@ -6,6 +5,8 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
   const returnQuestion = () => {
     return <h1 className='question'>{question.questionText}</h1>;
   };
+
+  const fireEmojis = "🔥".repeat(streak);
 
   const handleAnswerButtonClick = (answer) => {
     if (answerButtonClicked === false && timer > 0) {
@@ -58,6 +59,8 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
     } else if (!isAnswerCorrect && selectedAnswer && answer === question.correctAnswer) {
       buttonClass = 'correct';
     }
+
+  
   
   
     return (
@@ -76,7 +79,7 @@ const QuizList = ({question, setAggregateScore, aggregateScore, setButtonHidden,
     <div className='quiz-body'>
       <div>{returnQuestion()}</div>
       <div className='answers'>{returnAnswers}</div>
-      <p>Current Streak: {streak}</p>
+      <p>Current Streak: {streak} {fireEmojis} </p>
     </div>
   );
 };
